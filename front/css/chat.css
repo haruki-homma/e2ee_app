@@ -1,0 +1,50 @@
+body { font-family: sans-serif; background: #f0f2f5; margin: 0; padding: 0; display: flex; height: 100vh; }
+/* 左側メニューエリア */
+.sidebar { width: 320px; background: #2f3e46; color: white; display: flex; flex-direction: column; border-right: 1px solid #ddd; padding: 15px; box-sizing: border-box; }
+.sidebar h3 { margin-top: 0; font-size: 16px; border-bottom: 1px solid #4f6d7a; padding-bottom: 8px; color: #eaedd5; }
+
+/* ワンタイムID・お知らせセクション */
+.id-box { background: #354f52; padding: 12px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; line-height: 1.6; border-left: 4px solid #94d2bd;}
+
+/* タイマー部分 */
+.timer-text { display: block; margin-top: 5px; font-size: 11px; color: #ffb703; background: rgba(0,0,0,0.2); padding: 3px 8px; border-radius: 4px; text-align: center;}
+.notification-box { background: #cb7a24; padding: 8px; border-radius: 6px; margin-bottom: 15px; font-size: 12px; display: none; color: white; }
+.notification-box button { padding: 2px 6px; background: white; color: #cc5a01; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; margin-top: 4px; }
+
+/* ユーザー検索エリア */
+.search-area { margin-bottom: 20px; }
+.search-area input { width: 70%; padding: 6px; border-radius: 4px; border: none; }
+.search-area button { width: 25%; padding: 6px; background: #84a59d; border: none; color: white; cursor: pointer; border-radius: 4px; }
+.search-result { font-size: 12px; margin-top: 5px; background: #52796f; padding: 6px; border-radius: 4px; display: none; justify-content: space-between; align-items: center; }
+.search-result button { background: #f28482; padding: 3px 6px; font-size: 11px; }
+
+/* 鍵交換済みユーザーリスト */
+.friend-list { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.friend-item { padding: 10px; background: #354f52; border-radius: 6px; cursor: pointer; font-size: 13px; transition: 0.2s; border: 1px solid transparent; word-break: break-all; display: flex; justify-content: space-between; align-items: center; }
+.friend-item:hover { background: #52796f; }
+.friend-item.active { background: #84a59d; border-color: #fff; font-weight: bold; }
+/* ❌ボタンのスタイル */
+.delete-friend-btn { background: none; border: none; color: #ff4d4d; font-weight: bold; cursor: pointer; padding: 2px 6px; font-size: 14px; border-radius: 4px;}
+.delete-friend-btn:hover { background: rgba(255, 77, 77, 0.2); }
+
+/* 右側メインチャットエリア */
+.main-chat { flex: 1; display: flex; flex-direction: column; background: #e5e5e5; padding: 20px; box-sizing: border-box; }
+.chat-header { display: flex; justify-content: space-between; align-items: center; background: white; padding: 10px 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 15px; }
+.chat-header h2 { margin: 0; font-size: 18px; color: #333; }
+
+#chat-log { flex: 1; background: #7493a7; border-radius: 8px; padding: 20px; overflow-y: auto; margin-bottom: 15px; display: flex; flex-direction: column; box-shadow: inset 0 4px 10px rgba(0,0,0,0.1); }
+
+/* メッセージバルーン */
+.message-item { display: flex; flex-direction: column; margin: 8px 0; width: 100%; }
+.message-bubble { padding: 10px 15px; border-radius: 15px; font-size: 14px; max-width: 65%; word-break: break-all; }
+.message-time { font-size: 10px; margin-top: 4px; color: #e0e0e0; }
+.message-item.other { align-items: flex-start; }
+.message-item.other .message-bubble { background: white; color: black; border-top-left-radius: 2px; }
+.message-item.me { align-items: flex-end; }
+.message-item.me .message-bubble { background: #85e249; color: black; border-top-right-radius: 2px; }
+
+/* 入力エリア */
+.input-area { display: flex; gap: 10px; }
+input[type="text"]#message-input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; }
+.input-area button { padding: 12px 24px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.input-area button:disabled, input[type="text"]#message-input:disabled { background: #ccc; cursor: not-allowed; }

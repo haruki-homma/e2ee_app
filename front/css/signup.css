@@ -1,0 +1,9 @@
+body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f2f5; margin: 0; }
+.box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 300px; }
+h2 { margin-top: 0; text-align: center; color: #333; }
+input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+button:hover { background: #218838; }  <!--マウスオーバー時>
+.link { text-align: center; margin-top: 15px; font-size: 14px; }
+.link a { color: #007bff; text-decoration: none; }
+#message { margin-top: 15px; font-size: 14px; text-align: center; font-weight: bold; }

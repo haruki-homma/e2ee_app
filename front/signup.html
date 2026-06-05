@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録画面</title>
+    <link ref="stylesheet" href="/css/signup.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>新規登録画面</h2>
+    <input type="email" id="email" placeholder="メールアドレス" required>
+    <input type="password" id="password" placeholder="パスワード" required>
+    <button onclick="submitSignup()">新規登録</button>
+    <div class="link"><a href="/login.html">すでにアカウントをお持ちの方（ログイン）</a></div>
+    <div id="message"></div>
+</div>
+
+<script src="/js/signup.js"></script>
+</body>
+</html>

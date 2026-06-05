@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>個人チャット</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="id-box">
+            <strong>あなたのワンタイムID</strong>
+            <div style="font-size: 22px; font-weight: bold; color: #94d2bd; text-align: center; margin: 5px 0; letter-spacing: 2px;">
+                <span id="my-onetime-id">------</span>
+            </div>
+            <span class="timer-text">⌛ 残り時間: <span id="id-timer">--:--</span></span>
+        </div>
+
+        <div id="notification-area" class="notification-box">
+            🔔 鍵の申請が届いています！<br>
+            <span id="notif-sender" style="font-size: 11px; font-weight: bold;"></span><br>
+            <button onclick="acceptKeyExchange()">カギを受け取る</button>
+            <button onclick="rejectKeyExchange()" style="background: #e0e0e0; color: #333; margin-left: 5px;">許可しない</button>
+        </div>
+
+        <h3>🔍 ユーザーを検索 (相手のIDを入力)</h3>
+        <div class="search-area">
+            <input type="text" id="search-id-input" placeholder="6桁のID...">
+            <button onclick="searchUser()">検索</button>
+            <div id="search-result-panel" class="search-result">
+                <span id="target-user-email"></span>
+                <button onclick="sendKeyExchange()">鍵を送信</button>
+            </div>
+        </div>
+
+        <h3>👥 カギ交換済みユーザー</h3>
+        <div id="friend-list" class="friend-list">
+            </div>
+        
+        <div style="margin-top: 15px; font-size: 12px; text-align: center;">
+            🟢 接続中: <span id="user-count">0</span>人<br><br>
+            <a href="/password" style="color: #a8dadc; text-decoration: none;">🔒 パスワード変更</a> | 
+            <a href="#" onclick="logout()" style="color: #e63946; text-decoration: none;">🚪 ログアウト</a>
+        </div>
+    </div>
+
+    <div class="main-chat">
+        <div class="chat-header">
+            <h2 id="chat-with-title">メニューから連絡相手を選択してください</h2>
+            <div style="font-size: 12px; color: #666;">👤 ログイン中: <span id="my-login-email">...</span></div>
+        </div>
+
+        <div id="chat-log"></div>
+
+        <div class="input-area">
+            <input type="text" id="message-input" placeholder="相手を選択するとチャットが有効になります..." onkeypress="handleKeyPress(event)" disabled>
+            <button id="send-btn" onclick="sendMessage()" disabled>送信</button>
+        </div>
+    </div>
+
+<script src="/js/chat.js"></script>
+</body>
+</html>
